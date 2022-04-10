@@ -1,6 +1,13 @@
 def calculo_imc(peso, altura):
     imc = peso / (altura * altura)
-    print(imc)
+    return imc
+
+
+def pedir_datos():
+    peso = float(input('Dinos tu peso por favor: '))
+    altura_en_centimetros = float(input('Dinos tu altura por favor: '))
+    altura_en_metros = altura_en_centimetros / 100
+    imc = calculo_imc(peso, altura_en_metros)
 
     if imc < 19:
         print('Estado de Delgades')
@@ -12,8 +19,4 @@ def calculo_imc(peso, altura):
         print('Estado de Obesidad')
 
 
-peso = float(input('Dinos tu peso por favor: '))
-altura = float(input('Dinos tu altura por favor: '))
-altura = altura / 100
-
-calculo_imc(peso, altura)
+pedir_datos()
